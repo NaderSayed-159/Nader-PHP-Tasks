@@ -1,26 +1,68 @@
 <?php
-// inputs
-$num1 = 5;
-$num2 = 3;
-//Change the operator value to be one of  (addtion "+" / substraction "-" /multiplication "*" / division "/")
-$operator = "+";
-switch ($operator) {
-        //addtion case
-    case "+":
-        echo "<h1>Result is: " . ($num1 + $num2) . "</h1>";
-        break;
-        //substraction case
-    case "-":
-        echo "<h1>Result is: " . ($num1 - $num2) . "</h1>";
-        break;
+//start of rows
+for ($rows = 0; $rows < 8; $rows++) {
+    //row check if it odd or even
+    if ($rows % 2 == 0) {
+        //board cells if even
+        for ($cols = 0; $cols < 8; $cols++) {
+            if ($cols % 2 == 0) {
+                echo "| * | ";
+            } else {
+                echo "| - | ";
+            }
+        }
 
-        //multiplication case
-    case "*":
-        echo "<h1>Result is: " . ($num1 * $num2) . "</h1>";
-        break;
+        //board cells if odd
 
-        //division case
-    case "/":
-        echo "<h1>Result is: " . ($num1 / $num2) . "</h1>";
-        break;
+    } else {
+        for ($cols = 0; $cols < 8; $cols++) {
+            if ($cols % 2 == 0) {
+                echo "| - | ";
+            } else {
+                echo "| * | ";
+            }
+        }
+    }
+    echo "<br>";
+    echo "<br>";
 }
+
+echo "******************************************************************************************";
+//styling using table
+
+
+echo '<table width="450px"  border="1px">';
+
+for ($rows = 0; $rows < 8; $rows++) {
+
+    //table row
+    echo "<tr>";
+    if ($rows % 2 == 0) {
+        // if row is even
+
+        for ($cols = 0; $cols < 8; $cols++) {
+            if ($cols % 2 == 0) {
+                echo "<td height=35px width=35px bgcolor=#FFFFFF></td>";
+            } else {
+                echo "<td height=35px width=35px bgcolor=#ff0000></td>";
+            }
+        }
+    } else {
+        // if row is odd
+
+        for ($cols = 0; $cols < 8; $cols++) {
+            if ($cols % 2 == 0) {
+                echo "<td height=35px width=35px bgcolor=#ff0000></td>";
+            } else {
+                echo "<td height=35px width=35px bgcolor=#FFFFFF></td>";
+            }
+        }
+        //every row's end
+        echo "</tr>";
+
+        //row break
+        echo "<br>";
+    }
+}
+//end of board table
+echo "</table>";
