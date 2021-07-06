@@ -14,18 +14,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //get inputes values
     $name = clearInput($_POST["name"]);
     $email = clearInput($_POST["email"]);
-    $password = clearInput($_POST["password"]);
+    $password = htmlspecialchars($_POST["password"]);
     $age = clearInput($_POST["age"]);
     $linkedin = clearInput($_POST["linkedin"]);
 
     //Name validation
     if (empty($name)) {
-        echo "<h2 class='text-center'>Please Entar Your Name!</h2> <br>";
+        echo "<h2 class='text-center text-danger'>Please Entar Your Name!</h2> <br>";
     } else {
         if (strlen($name) < 4) {
-            echo "<h2 class='text-center'>Name length should be +4. </h2> <br>";
+            echo "<h2 class='text-center text-danger'>Name length should be +4. </h2> <br>";
         } else {
-            echo "<h2 class='text-center'>Welcome " . ucwords(strtolower($name)) . " ^_^</h2> <br>";
+            echo "<h2 class='text-center '>Welcome<span class='text-success'> " . ucwords(strtolower($name)) . "</span> ^_^</h2> <br>";
         }
     }
 
@@ -40,6 +40,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<h2 class='text-center'>You can use this : <span class='text-danger'>$san_mail</span></h2>";
         } else {
             echo "<h2 class='text-center'> <span class='text-success'>$email</span> is Valid Mail!</h2> <br>";
+        }
+    }
+
+
+    //password validation
+    if (empty($name)) {
+        echo "<h2 class='text-center text-danger'>Please Entar Your Password!</h2> <br>";
+    } else {
+        if (strlen($password) < 10) {
+            echo "<h2 class='text-center text-danger'>Password length should be +10. </h2> <br>";
+        } else {
+            echo "<h2 class='text-center'>Strong Password</h2> <br>";
         }
     }
 }
