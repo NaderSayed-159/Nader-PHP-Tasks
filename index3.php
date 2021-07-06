@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    //email validation
+    //Email validation 
 
     if (empty($email)) {
         echo "<h2 class='text-center text-danger'>Please Entar Your Email!</h2> <br>";
