@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //email validation
 
     if (empty($email)) {
-        echo "<h2 class='text-center'>Please Entar Your Email!</h2> <br>";
+        echo "<h2 class='text-center text-danger'>Please Entar Your Email!</h2> <br>";
     } else {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $san_mail = filter_var($email, FILTER_SANITIZE_EMAIL);
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     //password validation
-    if (empty($name)) {
+    if (empty($password)) {
         echo "<h2 class='text-center text-danger'>Please Entar Your Password!</h2> <br>";
     } else {
         if (strlen($password) < 10) {
@@ -54,32 +54,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<h2 class='text-center'>Strong Password</h2> <br>";
         }
     }
-}
 
-//age validation 
+    //age validation 
 
-if (empty($age)) {
-    echo "<h2 class='text-center text-danger'>Please Entar Your Age!</h2> <br>";
-} else {
-    if (!filter_var($age, FILTER_VALIDATE_INT)) {
-
-        echo "<h2 class='text-center text-danger'>Please Entar Number in age field</h2> <br>";
+    if (empty($age)) {
+        echo "<h2 class='text-center text-danger'>Please Entar Your Age!</h2> <br>";
     } else {
-        echo "<h2 class='text-center '>Your Age is <span class='text-success'>" . $age . "</span></h2> <br>";
+        if (!filter_var($age, FILTER_VALIDATE_INT)) {
+
+            echo "<h2 class='text-center text-danger'>Please Entar Number in age field</h2> <br>";
+        } else {
+            echo "<h2 class='text-center '>Your Age is <span class='text-success'>" . $age . "</span></h2> <br>";
+        }
+    }
+
+    //url validation 
+
+    if (empty($linkedin)) {
+        echo "<h2 class='text-center text-danger'>Please Entar Your Linkedin URL!</h2> <br>";
+    } else {
+        if (!filter_var($linkedin, FILTER_VALIDATE_URL)) {
+            echo "<h2 class='text-center text-danger'>Please valid URL!</h2> <br>";
+        } else {
+            echo "<h2 class='text-center text-success'>Valid URL!</h2> <br>";
+        }
     }
 }
 
-//url validation 
-
-if (empty($linkedin)) {
-    echo "<h2 class='text-center text-danger'>Please Entar Your Linkedin URL!</h2> <br>";
-} else {
-    if (!filter_var($linkedin, FILTER_VALIDATE_URL)) {
-        echo "<h2 class='text-center text-danger'>Please valid URL!</h2> <br>";
-    } else {
-        echo "<h2 class='text-center text-success'>Valid URL!</h2> <br>";
-    }
-}
 
 ?>
 
