@@ -52,9 +52,9 @@ for ($rows = 0; $rows < 8; $rows++) {
 
         for ($cols = 0; $cols < 8; $cols++) {
             if ($cols % 2 == 0) {
-                echo "<td height=35px width=35px bgcolor=#ff0000></td>";
+                echo "<td height=35px width=35px bgcolor=#ff0000 ></td>";
             } else {
-                echo "<td height=35px width=35px bgcolor=#FFFFFF></td>";
+                echo "<td height=35px width=35px bgcolor=#FFFFFF ></td>";
             }
         }
         //every row's end
