@@ -28,6 +28,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<h2 class='text-center'>Welcome " . ucwords(strtolower($name)) . " ^_^</h2> <br>";
         }
     }
+
+    //email validation
+
+    if (empty($email)) {
+        echo "<h2 class='text-center'>Please Entar Your Email!</h2> <br>";
+    } else {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $san_mail = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+            echo "<h2 class='text-center'>You can use this : <span class='text-danger'>$san_mail</span></h2>";
+        } else {
+            echo "<h2 class='text-center'> <span class='text-success'>$email</span> is Valid Mail!</h2> <br>";
+        }
+    }
 }
 
 
