@@ -18,4 +18,7 @@
 3. apply what u learn in php to print msgs of warnings or erorrs
 
 
-
+## Task 4 (Form with validation Uploaded file)
+1. create form
+2. validate inputs 
+3. apply what u learn in php to print msgs of warnings or erorrs
