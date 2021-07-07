@@ -20,5 +20,6 @@
 
 ## Task 4 (Form with validation Uploaded file)
 1. create form
-2. validate inputs 
-3. apply what u learn in php to print msgs of warnings or erorrs
+2. validate the uploaded file extansion
+3. rename it 
+4. store it in uploads file
