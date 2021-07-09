@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = clearInput($_POST["email"]);
     $password = htmlspecialchars($_POST["password"]);
     $age = clearInput($_POST["age"]);
-    $linkedin = clearInput($_POST["linkedin"]);
+    $linkedin = $_POST["linkedin"];
 
     //files
     $cvFilename = $_FILES["cvFile"]["name"];
