@@ -49,3 +49,48 @@ sortedArray($array);
 echo "</div>";
 
 //end of first task
+
+
+// start of second task
+
+$input = '6723';
+
+function sperator($str)
+{
+
+    //turn input string into array
+    $arrayedInput = str_split($str);
+
+    //storage 
+    $output = [];
+
+    //loop to add the sperator
+    foreach ($arrayedInput as $key => $value) {
+        # code...
+        if ($key % 2 != 0 && $key != 0) {
+            //to add sperator after even number only
+            $sepratedValue = ":";
+            array_push($output, $value);
+            array_push($output, $sepratedValue);
+        } else {
+
+            //to add thevalue if odd with out the seprator
+            array_push($output, $value);
+        }
+    }
+
+    //get the last seprator out of arrary in case inpute is even
+    if (count($arrayedInput) % 2 == 0) {
+        array_pop($output);
+    }
+
+    //turn array into string
+    $fianlRes = implode("", $output);
+
+    //print the resault
+    echo "<h1 style='margin:20px;text-align:center'>The sperated text of " . $str . " is:</h1>";
+    echo "<h1 style='color:red;margin:20px;text-align:center'>" . $fianlRes . "</h1>";
+}
+
+//Output
+sperator($input);
