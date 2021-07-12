@@ -78,7 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $operation = mysqli_query($connection, $sql);
 
         if ($operation) {
+
+            $_SESSION['msg'] = "Data inserted";
             echo "<h3 class='text-center text-success'> Data Inserted</h3>";
+            header('Location: index.php');
         } else {
             echo     mysqli_error($connection);
 
