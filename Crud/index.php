@@ -53,14 +53,16 @@ $op = mysqli_query($connection, $sql);
                 <td class="text-center"><?php echo $data['content']; ?></td>
                 <td class="text-center"><?php echo $data['imageName']; ?></td>
                 <td class="text-center">
-                    <a href="" class="btn btn-danger mx-2">Delete</a>
-                    <a href="" class="btn btn-warning mx-2">Edit</a>
+                    <a href="delete.php?id=<?php echo $data['id'] ?>" class="btn btn-danger mx-2">Delete</a>
+                    <a href="edit.php?id=<?php echo $data['id']; ?>" class="btn btn-warning mx-2">Edit</a>
 
                 </td>
             </tr>
 
         <?php } ?>
     </table>
+
+    <a href="create.php" class="btn btn-primary m-auto w-25 mt-3 d-block">Append New Date</a>
 </body>
 
 </html>
