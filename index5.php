@@ -36,6 +36,7 @@ function sortedArray($any)
         $cityArray = str_split($value);
         $city1stLtr =  $cityArray[0];
         $cityLefted = substr($value, 1);
+        // chunk_split($value,2,':')
         $styledValue =  "<span style='color:red;'>" . $city1stLtr . "</span>" . $cityLefted;
         //print final resualt
         echo "<h3 style='margin:5px;color:white; '>" . $i . "- The capitale of " . $key . " is " .  $styledValue . "." . "</h3>" . "<br>";
@@ -53,7 +54,7 @@ echo "</div>";
 
 // start of second task
 
-$input = '6723';
+$input = '123569';
 
 function sperator($str)
 {
