@@ -53,8 +53,14 @@ echo "</div>";
 
 
 // start of second task
+<<<<<<< HEAD
 
 $input = '123569';
+=======
+//change tis value to test make its length even or odd 
+//values to check ( 67231 , 6423 , 6723196)
+$input = '672319';
+>>>>>>> 0aad2eed62e106dd02176ace40e20a8cab7565d6
 
 function sperator($str)
 {
